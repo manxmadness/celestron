@@ -1,0 +1,305 @@
+<!doctype html>
+<html>
+   <head>
+      <title>Celestron</title>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   </head>
+   <style>
+      body{ 
+      margin:0; 
+      padding:0; 
+      }
+      #mainContainer{
+      position:absolute; 
+      width:300px; 
+      height:600px;
+      overflow:hidden; 
+      background-color: white; 
+      }
+      #border{ 
+      position:absolute; 
+      width:298px; 
+      height:598px; 
+      border:solid 1px #000; 
+      }
+      .fadeOut{ 
+      -webkit-transition:opacity 0.8s ease-out;
+      -moz-transition:opacity 0.8s ease-out;
+      transition:opacity 0.8s ease-out;
+      opacity:0 !important;
+      }
+      .fadeIn{ 
+      -webkit-transition:opacity 0.8s ease-out;
+      -moz-transition:opacity 0.8s ease-out;
+      transition:opacity 0.8s ease-out;
+      opacity:1 !important;
+      }
+      #bg{
+      position: absolute;
+      background: url('assets/300x600.png');
+      width: 300px;
+      height: 600px;
+      }
+      #congratulations{
+      position: absolute;
+      background: url('assets/congratulations.png');
+      width: 300px;
+      height: 600px;
+      opacity: 0;
+      cursor: pointer;
+      }
+      #nah{
+      position: absolute;
+      background: url('assets/nah.png');
+      width: 300px;
+      height: 600px;
+      opacity: 0;
+      cursor: pointer;
+      }
+      #ha{
+      position: absolute;
+      background: url('assets/ha.png');
+      width: 300px;
+      height: 600px;
+      opacity: 0;
+      cursor: pointer;
+      }
+      #nicetry{
+      position: absolute;
+      background: url('assets/nicetry.png');
+      width: 300px;
+      height: 600px;
+      opacity: 0;
+      cursor: pointer;
+      }
+      #pooryou{
+      position: absolute;
+      background: url('assets/pooryou.png');
+      width: 300px;
+      height: 600px;
+      opacity: 0;
+      cursor: pointer;
+      }
+      #no{
+      position: absolute;
+      background: url('assets/no.png');
+      width: 300px;
+      height: 600px;
+      opacity: 0;
+      cursor: pointer;
+      }
+      #dummy{
+      position: absolute;
+      background: url('assets/dummy.png');
+      width: 300px;
+      height: 600px;
+      opacity: 0;
+      cursor: pointer;
+      }
+      #marker{
+      position: absolute;
+      background: url('assets/marker.png');
+      width: 52px;
+      height: 52px;
+      left:185px;
+      top:318px;
+      opacity: 0;
+      z-index: 5;
+      cursor: pointer;
+      }
+      #error1{
+      position: absolute;
+      background: url('assets/marker.png');
+      width: 52px;
+      height: 52px;
+      left:159px;
+      top:58px;
+      opacity: 0;
+      z-index: 5;
+      cursor: pointer;
+      }
+      #error2{
+      position: absolute;
+      background: url('assets/marker.png');
+      width: 52px;
+      height: 52px;
+      left:38px;
+      top:172px;
+      opacity: 0;
+      z-index: 5;
+      cursor: pointer;
+      }
+      #error3{
+      position: absolute;
+      background: url('assets/marker.png');
+      width: 52px;
+      height: 52px;
+      left:169px;
+      top:177px;
+      opacity: 0;
+      z-index: 5;
+      cursor: pointer;
+      }
+      #error4{
+      position: absolute;
+      background: url('assets/marker.png');
+      width: 52px;
+      height: 52px;
+      left:71px;
+      top:330px;
+      opacity: 0;
+      z-index: 5;
+      cursor: pointer;
+      }
+      #error5{
+      position: absolute;
+      background: url('assets/marker.png');
+      width: 52px;
+      height: 52px;
+      left:57px;
+      top:463px;
+      opacity: 0;
+      z-index: 5;
+      cursor: pointer;
+      }
+      #error6{
+      position: absolute;
+      background: url('assets/marker.png');
+      width: 52px;
+      height: 52px;
+      left:233px;
+      top:381px;
+      opacity: 0;
+      z-index: 5;
+      cursor: pointer;
+      }
+      #shopnow{
+      position: absolute;
+      background: url('assets/shopnow.png');
+      width: 149px;
+      height: 34px;
+      left:76px;
+      top:443px;
+      opacity: 0;
+      z-index: 7;
+      cursor: pointer;
+      }
+      a{
+      cursor: pointer;
+      }
+      #shopnow:hover{
+      background: url('assets/shopnow-over.png');
+      }
+   </style>
+   <body>
+      <div id="mainContainer" class="mainContainer">
+         <div id="repBtn" class="repBtn"></div>
+         <div id="border" class="border"></div>
+         <div id="bg" class="bg"></div>
+         <div id="marker" class="marker"></div>
+         <div id="error1" class="error1"></div>
+         <div id="no" class="no"></div>
+         <div id="nicetry" class="nicetry"></div>
+         <div id="error2" class="error2"></div>
+         <div id="ha" class="ha"></div>
+         <div id="error3" class="error3"></div>
+         <div id="error4" class="error4"></div>
+         <div id="dummy" class="dummy"></div>
+         <div id="error5" class="error5"></div>
+         <div id="pooryou" class="pooryou"></div>
+         <div id="error6" class="error6"></div>
+         <div id="nah" class="nah"></div>
+         <a id="myLink" href="http://www.celestron.com" target="_blank">
+            <div id="shopnow" class="shopnow"></div>
+         </a>
+         <div id="congratulations" class="congratulations"></div>
+      </div>
+      <script>
+         function openPage(){
+             
+         }
+         document.getElementById("marker").onmouseover = function() { 
+             marker.className += " fadeIn";
+             congratulations.className += " fadeIn";
+             shopnow.className += " fadeIn";
+         }
+         
+         
+         //error 1
+         document.getElementById("error1").onmouseover = function() { 
+             error1.className += " fadeIn";
+             no.className += " fadeIn";
+             
+             
+         }
+         
+         document.getElementById("error1").onmouseout = function() { 
+             error1.className = "error1 fadeOut";
+             no.className = "no fadeOut";
+             
+         }
+         
+         
+         //error 2
+         document.getElementById("error2").onmouseover = function() { 
+             error2.className += " fadeIn";
+             nicetry.className += " fadeIn";
+         }
+         
+         document.getElementById("error2").onmouseout = function() { 
+             error2.className = "error2 fadeOut";
+             nicetry.className = "nicetry fadeOut";
+             
+             
+         }
+         
+         
+         //error 3
+         document.getElementById("error3").onmouseover = function() { 
+             error3.className += " fadeIn";
+             ha.className += " fadeIn";
+         }
+         
+         document.getElementById("error3").onmouseout = function() { 
+             error3.className = "error3 fadeOut";
+             ha.className = "ha fadeOut";
+         }
+         
+         
+         //error 4
+         document.getElementById("error4").onmouseover = function() { 
+             error4.className += " fadeIn";
+             dummy.className += " fadeIn";
+         }
+         
+         document.getElementById("error4").onmouseout = function() { 
+             error4.className = "error4 fadeOut";
+             dummy.className = "dummy fadeOut";
+         }
+         
+         
+         //error 5
+         document.getElementById("error5").onmouseover = function() { 
+             error5.className += " fadeIn";
+             pooryou.className += " fadeIn";
+         }
+         
+         document.getElementById("error5").onmouseout = function() { 
+             error5.className = "error5 fadeOut";
+             pooryou.className = "pooryou fadeOut";
+         }
+         
+         //error 6
+         document.getElementById("error6").onmouseover = function() { 
+             error6.className += " fadeIn";
+             nah.className += " fadeIn";
+         }
+         
+         document.getElementById("error6").onmouseout = function() { 
+             error6.className = "error6 fadeOut";
+             nah.className = "nah fadeOut";
+         }
+      </script>
+   </body>
+</html>
