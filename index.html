@@ -81,6 +81,15 @@
       opacity: 0;
       cursor: pointer;
       }
+
+      #wrong{
+      position: absolute;
+      background: url('assets/wrong.png');
+      width: 300px;
+      height: 600px;
+      opacity: 0;
+      cursor: pointer;
+      }
       #no{
       position: absolute;
       background: url('assets/no.png');
@@ -89,6 +98,16 @@
       opacity: 0;
       cursor: pointer;
       }
+
+      #cigar{
+      position: absolute;
+      background: url('assets/close.png');
+      width: 300px;
+      height: 600px;
+      opacity: 0;
+      cursor: pointer;
+      }
+
       #dummy{
       position: absolute;
       background: url('assets/dummy.png');
@@ -97,6 +116,16 @@
       opacity: 0;
       cursor: pointer;
       }
+
+            #whoops{
+      position: absolute;
+      background: url('assets/whoops.png');
+      width: 300px;
+      height: 600px;
+      opacity: 0;
+      cursor: pointer;
+      }
+
       #marker{
       position: absolute;
       background: url('assets/marker.png');
@@ -174,6 +203,45 @@
       z-index: 5;
       cursor: pointer;
       }
+
+      #error7{
+      position: absolute;
+      background: url('assets/marker.png');
+      width: 52px;
+      height: 52px;
+      left:-13px;
+      top:59px;
+      opacity: 0;
+      z-index: 5;
+      cursor: pointer;
+      }
+
+      #error8{
+      position: absolute;
+      background: url('assets/marker.png');
+      width: 52px;
+      height: 52px;
+      left: 165px;
+      top: 118px;
+      opacity: 0;
+      z-index: 5;
+      cursor: pointer;
+      }
+
+      #error9{
+      position: absolute;
+      background: url('assets/marker.png');
+      width: 52px;
+      height: 52px;
+      left: 125px;
+      top: 491px;
+      opacity: 0;
+      z-index: 5;
+      cursor: pointer;
+      }
+
+    
+
       #shopnow{
       position: absolute;
       background: url('assets/shopnow.png');
@@ -210,6 +278,14 @@
          <div id="pooryou" class="pooryou"></div>
          <div id="error6" class="error6"></div>
          <div id="nah" class="nah"></div>
+         
+         <div id="error7" class="error7"></div>
+         <div id="wrong" class="wrong"></div>
+         <div id="error8" class="error8"></div>
+         <div id="cigar" class="cigar"></div>
+         <div id="error9" class="error9"></div>
+         <div id="whoops" class="whoops"></div>
+         
          <a id="myLink" href="http://www.celestron.com" target="_blank">
             <div id="shopnow" class="shopnow"></div>
          </a>
@@ -299,6 +375,36 @@
          document.getElementById("error6").onmouseout = function() { 
              error6.className = "error6 fadeOut";
              nah.className = "nah fadeOut";
+         }
+
+         //error 7
+         document.getElementById("error7").onmouseover = function() { 
+             error7.className += " fadeIn";
+             wrong.className += " fadeIn";
+         }
+         document.getElementById("error7").onmouseout = function() { 
+             error7.className = "error7 fadeOut";
+             wrong.className = "wrong fadeOut";
+         }
+
+         //error 8
+         document.getElementById("error8").onmouseover = function() { 
+             error8.className += " fadeIn";
+             cigar.className += " fadeIn";
+         }
+         document.getElementById("error8").onmouseout = function() { 
+             error8.className = "error8 fadeOut";
+             cigar.className = "cigar fadeOut";
+         }
+
+         //error 9
+         document.getElementById("error9").onmouseover = function() { 
+             error9.className += " fadeIn";
+             whoops.className += " fadeIn";
+         }
+         document.getElementById("error9").onmouseout = function() { 
+             error9.className = "error8 fadeOut";
+             whoops.className = "whoops fadeOut";
          }
       </script>
    </body>
